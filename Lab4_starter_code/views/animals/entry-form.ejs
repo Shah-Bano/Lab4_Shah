@@ -1,0 +1,75 @@
+<!--// Author: Shah Bano
+// Date: 18th April 2024
+// Description: Lab 4 -->
+<%- include('partials/_title', { title: "Add an animal to the database" }) %>
+
+
+<%- include('partials/_nav') %>
+
+<h1>Add an animal to the database</h1>
+
+<form action="/addAnimal" method="post">
+
+    <fieldset>
+        <legend>Add Animal</legend>
+
+        <div class="mb-3">
+            <label for="homeZoo" class="form-label">Home Zoo</label>
+            <input type="text" class="form-control" id="homeZoo" name="homeZoo">
+        </div>
+
+        <div class="mb-3">
+            <label for="scientificName" class="form-label">Scientific Name</label>
+            <input type="text" class="form-control" id="scientificName" name="scientificName">
+        </div>
+
+        <div class="mb-3">
+            <label for="commonName" class="form-label">Common Name</label>
+            <input type="text" class="form-control" id="commonName" name="commonName">
+        </div>
+
+        <div class="mb-3">
+            <label for="givenName" class="form-label">Given Name</label>
+            <input type="text" class="form-control" id="givenName" name="givenName">
+        </div>
+
+        <div class="mb-3">
+            <label>Gender</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                <label class="form-check-label" for="male">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                <label class="form-check-label" for="female">Female</label>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="dateOfBirth" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth">
+        </div>
+
+        <div class="mb-3">
+            <label for="age" class="form-label">Age</label>
+            <input type="number" class="form-control" id="age" name="age">
+        </div>
+
+        <div class="mb-3">
+            <label>Is Transportable</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="transportable" id="available" value="available">
+                <label class="form-check-label" for="available">Available</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="transportable" id="unavailable" value="unavailable">
+                <label class="form-check-label" for="unavailable">Unavailable</label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Animal to Database</button>
+        <button type="reset" class="btn btn-secondary">Reset Form</button>
+
+    </fieldset>
+
+</form>

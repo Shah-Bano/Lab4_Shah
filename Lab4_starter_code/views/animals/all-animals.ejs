@@ -1,0 +1,30 @@
+<!-- // Author: Shah Bano
+// Date: 18th April 2024
+// Description: Lab 4 -->
+<%- include('partials/_title', { title: "All Animals" }) %>
+
+
+<%- include('partials/_nav') %>
+<h1>All Animals</h1>
+
+<div class="container mt-4">
+  <div class="row">
+    <% animals.forEach(function(animal) { %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= animal.commonName %></h5>
+            <p class="card-text">Scientific Name: <%= animal.scientificName %></p>
+            <p class="card-text">Given Name: <%= animal.givenName %></p>
+            <p class="card-text">Gender: <%= animal.gender %></p>
+            <p class="card-text">Date of Birth: <%= animal.dateOfBirth.toDateString() %></p>
+            <p class="card-text">Age: <%= animal.age %></p>
+            <p class="card-text">Is Transportable: <%= animal.isTransportable ? 'Yes' : 'No' %></p>
+            <a href="edit-animal.ejs" class="btn btn-primary">Edit</a>
+
+          </div>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+</div>
