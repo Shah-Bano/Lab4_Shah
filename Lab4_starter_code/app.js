@@ -4,13 +4,13 @@
 require('dotenv').config(); // Load environment variables from .env file
 const mongoose = require('mongoose');
 
-// Get MongoDB connection string from environment variables
+// Get MongoDB connection string 
 const mongoURI = process.env.MONGODB_URI;
 
 // Connect to MongoDB
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
-// Check if the connection is successful
+
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {

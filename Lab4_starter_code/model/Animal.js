@@ -4,7 +4,7 @@
 const mongoose = require('mongoose');
 
 
-// Define the Animal schema
+//  Animal schema
 const animalSchema = new mongoose.Schema({
   zoo: {
     type: String,
@@ -40,10 +40,10 @@ const animalSchema = new mongoose.Schema({
   }
 });
 
-// Export the Animal model
+// Export 
 const Animal = mongoose.model('Animal', animalSchema);
 
-// Adding three entries
+// Adding 1000 entries
 const entries = [{zoo:"nulla sed vel",scientificName:"Carduelis uropygialis",commonName:"Siskin, yellow-rumped",givenName:"Noel",gender:"Male",dateOfBirth:"6/9/2023",age:1,isTransportable:true},
 {zoo:"ultricies eu nibh",scientificName:"Eubalaena australis",commonName:"Whale, southern right",givenName:"Kelsey",gender:"Male",dateOfBirth:"10/5/2023",age:2,isTransportable:false},
 {zoo:"sed sagittis nam",scientificName:"Cynictis penicillata",commonName:"Meerkat, red",givenName:"Algernon",gender:"Male",dateOfBirth:"5/20/2023",age:3,isTransportable:true},
@@ -1046,22 +1046,20 @@ const entries = [{zoo:"nulla sed vel",scientificName:"Carduelis uropygialis",com
 {zoo:"adipiscing molestie hendrerit",scientificName:"Nannopterum harrisi",commonName:"Flightless cormorant",givenName:"Erinna",gender:"Female",dateOfBirth:"12/5/2023",age:1000,isTransportable:false}
 ];
 
-// Function to populate the database with mock data
+
 async function populateDatabase() {
   try {
-    // Clear existing data from the database (optional)
-    await Animal.deleteMany({});
 
-    // Insert mock data into the database
+
     await Animal.insertMany(entries);
 
-    console.log('Database populated with mock data');
+    console.log('Database populated');
   } catch (error) {
-    console.error('Error populating database:', error);
+    console.error('Error', error);
   }
 }
 
-// Call the function to populate the database
+
 populateDatabase();
 
 module.exports = Animal;
